@@ -29,7 +29,9 @@ const Map = ({ coords, places, setCoords, setBounds, setChildClicked, weatherDat
         {places.length && places.map((place, i) => (
           <div
             className={classes.markerContainer}
+            // eslint-disable-next-line react/no-unknown-property
             lat={Number(place.latitude)}
+            // eslint-disable-next-line react/no-unknown-property
             lng={Number(place.longitude)}
             key={i}
           >
@@ -48,6 +50,7 @@ const Map = ({ coords, places, setCoords, setBounds, setChildClicked, weatherDat
           </div>
         ))}
         {weatherData?.list?.length && weatherData.list.map((data, i) => (
+          // eslint-disable-next-line react/no-unknown-property
           <div key={i} lat={data.coord.lat} lng={data.coord.lon}>
             <img src={`http://openweathermap.org/img/w/${data.weather[0].icon}.png`} height="70px" />
           </div>
